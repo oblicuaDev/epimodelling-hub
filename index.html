@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EpiModelling Hub | Instituto Nacional de Salud</title>
+  <meta name="description" content="EpiModelling Hub – Iniciativa del Instituto Nacional de Salud (INS) de Colombia." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+<body>
+
+  <!-- ============ ÍCONOS (sprite SVG) ============ -->
+  <svg xmlns="http://www.w3.org/2000/svg" style="display:none" aria-hidden="true">
+    <defs>
+      <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></symbol>
+      <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></symbol>
+      <symbol id="i-x" viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12"/></symbol>
+      <symbol id="i-chevron-right" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></symbol>
+      <symbol id="i-chevron-down" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></symbol>
+      <symbol id="i-arrow-right" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></symbol>
+      <symbol id="i-arrow-up" viewBox="0 0 24 24"><path d="M12 19V5M5 12l7-7 7 7"/></symbol>
+      <symbol id="i-target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></symbol>
+      <symbol id="i-eye" viewBox="0 0 24 24"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></symbol>
+      <symbol id="i-users" viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></symbol>
+      <symbol id="i-bar-chart" viewBox="0 0 24 24"><path d="M3 3v18h18"/><path d="M18 17V9M13 17V5M8 17v-3"/></symbol>
+      <symbol id="i-trending-up" viewBox="0 0 24 24"><path d="m22 7-8.5 8.5-5-5L2 17"/><path d="M16 7h6v6"/></symbol>
+      <symbol id="i-network" viewBox="0 0 24 24"><circle cx="12" cy="5" r="3"/><circle cx="5" cy="19" r="3"/><circle cx="19" cy="19" r="3"/><path d="M10.6 7.7 6.4 16.3M13.4 7.7l4.2 8.6M8 19h8"/></symbol>
+      <symbol id="i-clipboard-check" viewBox="0 0 24 24"><rect x="8" y="2" width="8" height="4" rx="1"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><path d="m9 14 2 2 4-4"/></symbol>
+      <symbol id="i-bug" viewBox="0 0 24 24"><path d="m8 2 1.9 1.9M16 2l-1.9 1.9"/><rect x="7" y="6" width="10" height="14" rx="5"/><path d="M12 20v-9M3 13h4M17 13h4M4 7l3 2M20 7l-3 2M4 19l3-2M20 19l-3-2"/></symbol>
+      <symbol id="i-wind" viewBox="0 0 24 24"><path d="M17.7 7.7a2.5 2.5 0 1 1 1.8 4.3H2M9.6 4.6A2 2 0 1 1 11 8H2M12.6 19.4A2 2 0 1 0 14 16H2"/></symbol>
+      <symbol id="i-alert" viewBox="0 0 24 24"><path d="M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h16.9a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0Z"/><path d="M12 9v4M12 17h.01"/></symbol>
+      <symbol id="i-cloud-sun" viewBox="0 0 24 24"><path d="M12 2v2M4.9 4.9l1.4 1.4M20 12h2M19.1 4.9l-1.4 1.4"/><path d="M15.9 13A4 4 0 0 0 8.4 10.6"/><path d="M13 22H7a5 5 0 1 1 4.9-6H13a3 3 0 0 1 0 6Z"/></symbol>
+      <symbol id="i-map-pin" viewBox="0 0 24 24"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></symbol>
+      <symbol id="i-calendar" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></symbol>
+      <symbol id="i-download" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="m7 10 5 5 5-5M12 15V3"/></symbol>
+      <symbol id="i-upload" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="m17 8-5-5-5 5M12 3v12"/></symbol>
+      <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
+      <symbol id="i-link" viewBox="0 0 24 24"><path d="M10 13a5 5 0 0 0 7.5.5l3-3a5 5 0 0 0-7-7l-1.7 1.7"/><path d="M14 11a5 5 0 0 0-7.5-.5l-3 3a5 5 0 0 0 7 7l1.7-1.7"/></symbol>
+      <symbol id="i-grid" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/></symbol>
+      <symbol id="i-list" viewBox="0 0 24 24"><path d="M8 6h13M8 12h13M8 18h13M3 6h.01M3 12h.01M3 18h.01"/></symbol>
+      <symbol id="i-sort" viewBox="0 0 24 24"><path d="m21 16-4 4-4-4M17 20V4M3 8l4-4 4 4M7 4v16"/></symbol>
+      <symbol id="i-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></symbol>
+      <symbol id="i-image" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-3.1-3.1a2 2 0 0 0-2.8 0L6 21"/></symbol>
+      <symbol id="i-home" viewBox="0 0 24 24"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="M9 22V12h6v10"/></symbol>
+      <symbol id="i-mail" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 5L2 7"/></symbol>
+      <symbol id="i-phone" viewBox="0 0 24 24"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2Z"/></symbol>
+      <symbol id="i-external" viewBox="0 0 24 24"><path d="M15 3h6v6M10 14 21 3M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></symbol>
+      <symbol id="i-flask" viewBox="0 0 24 24"><path d="M9 3h6M10 3v6.5L4.5 19a1.5 1.5 0 0 0 1.3 2.3h12.4a1.5 1.5 0 0 0 1.3-2.3L14 9.5V3"/><path d="M7 15h10"/></symbol>
+      <symbol id="i-activity" viewBox="0 0 24 24"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></symbol>
+      <symbol id="i-transfer" viewBox="0 0 24 24"><path d="m16 3 4 4-4 4M20 7H4M8 21l-4-4 4-4M4 17h16"/></symbol>
+      <symbol id="i-news" viewBox="0 0 24 24"><path d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 1-2 2Zm0 0a2 2 0 0 1-2-2v-9c0-1.1.9-2 2-2h2"/><path d="M18 14h-8M15 18h-5M10 6h8v4h-8z"/></symbol>
+      <symbol id="i-megaphone" viewBox="0 0 24 24"><path d="m3 11 18-5v12L3 14v-3z"/><path d="M11.6 16.8a3 3 0 1 1-5.8-1.6"/></symbol>
+      <symbol id="i-folder-open" viewBox="0 0 24 24"><path d="m6 14 1.5-2.9A2 2 0 0 1 9.2 10H20a2 2 0 0 1 1.9 2.5l-1.5 6A2 2 0 0 1 18.4 20H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h3.9a2 2 0 0 1 1.7.9l.8 1.2a2 2 0 0 0 1.7.9H18a2 2 0 0 1 2 2v2"/></symbol>
+      <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></symbol>
+      <symbol id="i-check" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></symbol>
+      <symbol id="i-more" viewBox="0 0 24 24"><circle cx="5" cy="12" r="1"/><circle cx="12" cy="12" r="1"/><circle cx="19" cy="12" r="1"/></symbol>
+      <symbol id="i-book" viewBox="0 0 24 24"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2zM22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></symbol>
+      <symbol id="i-filter" viewBox="0 0 24 24"><path d="M22 3H2l8 9.5V19l4 2v-8.5z"/></symbol>
+    </defs>
+  </svg>
+
+  <a class="skip-link" href="#main">Saltar al contenido principal</a>
+
+  <!-- ============ ENCABEZADO ============ -->
+  <header class="topbar">
+    <div class="container topbar__inner">
+      <a href="#/inicio" class="brand" aria-label="Ir al inicio del EpiModelling Hub">
+        <img src="https://www.ins.gov.co/_catalogs/masterpage/css/images/gov-salud.png" alt="Gov.co – Salud" class="brand__gov" />
+        <span class="brand__divider" aria-hidden="true"></span>
+        <img src="https://www.ins.gov.co/Portalweb2025/general-assets/ins-logo.png" alt="Instituto Nacional de Salud" class="brand__ins" />
+        <span class="brand__divider brand__divider--hub" aria-hidden="true"></span>
+        <span class="brand__hub">
+          <span class="brand__hub-title">EpiModelling <b>Hub</b></span>
+          <span class="brand__hub-sub">Micrositio INS</span>
+        </span>
+      </a>
+
+      <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="mainNav">
+        <svg aria-hidden="true"><use href="#i-menu"/></svg>
+      </button>
+    </div>
+  </header>
+
+  <!-- ============ NAVEGACIÓN PRINCIPAL ============ -->
+  <nav class="mainnav" id="mainNav" aria-label="Navegación principal">
+    <div class="container mainnav__inner">
+      <ul class="mainnav__list">
+        <li><a href="#/inicio" data-route="inicio" class="mainnav__link"><svg class="ico ico--sm" aria-hidden="true"><use href="#i-home"/></svg> Inicio</a></li>
+        <li><a href="#/acerca" data-route="acerca" class="mainnav__link">Acerca del Hub</a></li>
+        <li><a href="#/areas" data-route="areas" class="mainnav__link">Áreas de investigación</a></li>
+        <li><a href="#/convocatoria" data-route="convocatoria" class="mainnav__link">Convocatoria</a></li>
+        <li><a href="#/noticias" data-route="noticias" class="mainnav__link">Noticias</a></li>
+        <li><a href="#/documentos" data-route="documentos" class="mainnav__link">Documentos de interés</a></li>
+      </ul>
+    </div>
+    <div class="flag-stripe" aria-hidden="true"></div>
+  </nav>
+
+  <main id="main" tabindex="-1">
+
+    <!-- =====================================================
+         PÁGINA: INICIO
+    ====================================================== -->
+    <section class="page" data-page="inicio" data-title="Inicio">
+      <div class="hero hero--home">
+        <div class="container hero__grid">
+          <div class="hero__content">
+            <h1 class="hero__title">EpiModelling <span>Hub</span></h1>
+            <span class="hero__rule" aria-hidden="true"></span>
+            <p class="hero__lead">El EpiModelling Hub es una iniciativa del Instituto Nacional de Salud (INS) que busca conectar datos públicos de alta relevancia con talento científico nacional e internacional, creando un ecosistema en el que las preguntas de salud pública puedan transformarse en análisis reproducibles, modelos validados y productos de inteligencia epidemiológica que contribuyan a la vigilancia, la preparación, la respuesta y la evaluación de eventos de salud pública en Colombia. Esta iniciativa busca articular las capacidades analíticas de universidades, centros de investigación y expertos nacionales e internacionales en torno a los eventos prioritarios de salud pública vigilados por el INS.</p>
+            <div class="hero__actions">
+              <a href="#/acerca" class="btn btn--primary btn--lg">Acerca del Hub <svg class="ico ico--sm" aria-hidden="true"><use href="#i-arrow-right"/></svg></a>
+              <a href="#/convocatoria" class="btn btn--ghost-light btn--lg">Convocatoria</a>
+            </div>
+          </div>
+          <figure class="img-ph img-ph--dark hero__media">
+            <svg aria-hidden="true"><use href="#i-image"/></svg>
+            
+          </figure>
+        </div>
+      </div>
+
+
+      <!-- Accesos rápidos -->
+      <div class="section section--tint">
+        <div class="container">
+          <div class="quick-grid">
+            <a href="#/acerca" class="quick-card">
+              <span class="icon-bubble"><svg aria-hidden="true"><use href="#i-eye"/></svg></span>
+              <h3>Acerca del Hub</h3>
+              <p>¿Qué es el EpiModelling Hub? · Visión · Objetivos</p>
+              <span class="quick-card__go"><svg aria-hidden="true"><use href="#i-arrow-right"/></svg></span>
+            </a>
+            <a href="#/areas" class="quick-card">
+              <span class="icon-bubble"><svg aria-hidden="true"><use href="#i-network"/></svg></span>
+              <h3>Áreas de investigación</h3>
+              <p>Temas de interés prioritario · Ejes temáticos</p>
+              <span class="quick-card__go"><svg aria-hidden="true"><use href="#i-arrow-right"/></svg></span>
+            </a>
+            <a href="#/convocatoria" class="quick-card">
+              <span class="icon-bubble"><svg aria-hidden="true"><use href="#i-megaphone"/></svg></span>
+              <h3>Convocatoria</h3>
+              <p>Próximamente: ¿Cómo participar?</p>
+              <span class="quick-card__go"><svg aria-hidden="true"><use href="#i-arrow-right"/></svg></span>
+            </a>
+            <a href="#/documentos" class="quick-card">
+              <span class="icon-bubble"><svg aria-hidden="true"><use href="#i-folder-open"/></svg></span>
+              <h3>Documentos de interés</h3>
+              <p>Biblioteca de documentos</p>
+              <span class="quick-card__go"><svg aria-hidden="true"><use href="#i-arrow-right"/></svg></span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Temas (resumen) -->
+      <div class="section">
+        <div class="container">
+          <div class="section-head">
+            <div>
+              <h2 class="section-title">Temas de interés prioritario</h2>
+            </div>
+            <a href="#/areas/temas" class="link-arrow">Ver áreas de investigación <svg class="ico ico--sm" aria-hidden="true"><use href="#i-arrow-right"/></svg></a>
+          </div>
+          <ul class="topic-grid">
+              <li class="topic-card topic-card--teal"><a class="topic-card__link" href="#/areas/temas"><span class="topic-card__icon"><svg aria-hidden="true"><use href="#i-bug"/></svg></span><svg class="topic-card__mark" aria-hidden="true"><use href="#i-bug"/></svg><h3>Enfermedades transmitidas por vectores y zoonosis.</h3><span class="topic-card__go"><svg aria-hidden="true"><use href="#i-arrow-right"/></svg></span></a></li>
+              <li class="topic-card topic-card--blue"><a class="topic-card__link" href="#/areas/temas"><span class="topic-card__icon"><svg aria-hidden="true"><use href="#i-wind"/></svg></span><svg class="topic-card__mark" aria-hidden="true"><use href="#i-wind"/></svg><h3>Enfermedades respiratorias e inmunoprevenibles.</h3><span class="topic-card__go"><svg aria-hidden="true"><use href="#i-arrow-right"/></svg></span></a></li>
+              <li class="topic-card topic-card--red"><a class="topic-card__link" href="#/areas/temas"><span class="topic-card__icon"><svg aria-hidden="true"><use href="#i-alert"/></svg></span><svg class="topic-card__mark" aria-hidden="true"><use href="#i-alert"/></svg><h3>Brotes de curso rápido y emergencias en salud pública.</h3><span class="topic-card__go"><svg aria-hidden="true"><use href="#i-arrow-right"/></svg></span></a></li>
+              <li class="topic-card topic-card--sky"><a class="topic-card__link" href="#/areas/temas"><span class="topic-card__icon"><svg aria-hidden="true"><use href="#i-cloud-sun"/></svg></span><svg class="topic-card__mark" aria-hidden="true"><use href="#i-cloud-sun"/></svg><h3>Clima, ambiente y salud.</h3><span class="topic-card__go"><svg aria-hidden="true"><use href="#i-arrow-right"/></svg></span></a></li>
+              <li class="topic-card topic-card--violet"><a class="topic-card__link" href="#/areas/temas"><span class="topic-card__icon"><svg aria-hidden="true"><use href="#i-map-pin"/></svg></span><svg class="topic-card__mark" aria-hidden="true"><use href="#i-map-pin"/></svg><h3>Determinantes sociales y territoriales de la salud.</h3><span class="topic-card__go"><svg aria-hidden="true"><use href="#i-arrow-right"/></svg></span></a></li>
+            </ul>
+        </div>
+      </div>
+
+      <!-- Banner convocatoria -->
+      <div class="section section--compact">
+        <div class="container">
+          <div class="cta-banner">
+            <div class="cta-banner__icon"><svg aria-hidden="true"><use href="#i-megaphone"/></svg></div>
+            <div class="cta-banner__body">
+              <h2>Próximamente: ¿Cómo participar?</h2>
+              <p>Los detalles sobre los mecanismos de participación de equipos de investigación, universidades y expertos, en las convocatorias del Hub serán publicados oportunamente en la página del Instituto Nacional de Salud.</p>
+            </div>
+            <a href="#/convocatoria" class="btn btn--white">Ir a Convocatoria <svg class="ico ico--sm" aria-hidden="true"><use href="#i-arrow-right"/></svg></a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Noticias (últimas) -->
+      <div class="section section--tint">
+        <div class="container">
+          <div class="section-head">
+            <div>
+              <h2 class="section-title">Noticias</h2>
+            </div>
+            <a href="#/noticias" class="link-arrow">Ver todas las noticias <svg class="ico ico--sm" aria-hidden="true"><use href="#i-arrow-right"/></svg></a>
+          </div>
+          <div class="news-grid" id="homeNews"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================================
+         PÁGINA: ACERCA DEL HUB
+    ====================================================== -->
+    <section class="page" data-page="acerca" data-title="Acerca del Hub" hidden>
+      <div class="hero hero--inner">
+        <div class="container hero__grid">
+          <div class="hero__content">
+            <nav class="breadcrumb" aria-label="Ruta de navegación"><a href="#/inicio">Inicio</a><svg aria-hidden="true"><use href="#i-chevron-right"/></svg><span aria-current="page">Acerca del Hub</span></nav>
+            <h1 class="hero__title hero__title--inner">Acerca del Hub</h1>
+          </div>
+        </div>
+      </div>
+
+      <div class="container page-layout page-layout--single">
+
+        <div class="page-body">
+          <article id="que-es" class="block">
+            <h2 class="section-title">¿Qué es el EpiModelling Hub?</h2>
+            <div class="split split--text">
+              <div class="prose">
+                <p>El EpiModelling Hub es una iniciativa del Instituto Nacional de Salud (INS) que busca conectar datos públicos de alta relevancia con talento científico nacional e internacional, creando un ecosistema en el que las preguntas de salud pública puedan transformarse en análisis reproducibles, modelos validados y productos de inteligencia epidemiológica que contribuyan a la vigilancia, la preparación, la respuesta y la evaluación de eventos de salud pública en Colombia. Esta iniciativa busca articular las capacidades analíticas de universidades, centros de investigación y expertos nacionales e internacionales en torno a los eventos prioritarios de salud pública vigilados por el INS.</p>
+                <p>El Hub funciona como una plataforma de colaboración abierta, basada en el valor de construir comunidad alrededor de los datos y del conocimiento. En este marco, busca promover la participación y colaboración de equipos con experiencia en epidemiología, modelamiento matemático, estadística, ciencia de datos e inteligencia artificial, con el propósito de desarrollar soluciones que contribuyan a la caracterización, predicción, comprensión y evaluación de los eventos de salud pública en Colombia.</p>
+              </div>
+              <figure class="img-ph" style="aspect-ratio: 3/4">
+                <svg aria-hidden="true"><use href="#i-image"/></svg>
+                
+              </figure>
+            </div>
+          </article>
+
+          <article id="vision" class="block">
+            <div class="vision-card">
+              <div class="vision-card__icon"><svg aria-hidden="true"><use href="#i-target"/></svg></div>
+              <div>
+                <h2 class="vision-card__label">Visión</h2>
+                <p class="vision-card__text">Convertir los datos del sistema de vigilancia epidemiológica de Colombia en inteligencia accionable para la salud pública, articulando capacidades analíticas nacionales e internacionales bajo principios de ciencia abierta.</p>
+              </div>
+            </div>
+          </article>
+
+          <article id="objetivos" class="block">
+            <h2 class="section-title">Objetivos</h2>
+
+            <div class="goal-general">
+              <span class="badge">Objetivo general</span>
+              <p>Generar conocimiento epidemiológico accionable a partir de los datos de vigilancia en salud pública de Colombia, integrando epidemiología, modelamiento matemático, estadística, ciencia de datos e inteligencia artificial, y articulando capacidades del sector público, la academia y otros actores nacionales e internacionales.</p>
+            </div>
+
+            <h3 class="subhead">Objetivos específicos</h3>
+            <ol class="goal-grid">
+              <li class="goal-card">
+                <span class="icon-bubble icon-bubble--blue"><svg aria-hidden="true"><use href="#i-activity"/></svg></span>
+                <p>Desarrollar soluciones analíticas que permitan caracterizar, anticipar, comprender y evaluar los eventos prioritarios de salud pública vigilados por el INS.</p>
+              </li>
+              <li class="goal-card">
+                <span class="icon-bubble icon-bubble--teal"><svg aria-hidden="true"><use href="#i-users"/></svg></span>
+                <p>Articular una comunidad de investigadores e instituciones con capacidades en epidemiología cuantitativa, estadística, modelamiento y ciencia de datos para abordar problemas de salud pública de manera colaborativa.</p>
+              </li>
+              <li class="goal-card">
+                <span class="icon-bubble icon-bubble--amber"><svg aria-hidden="true"><use href="#i-transfer"/></svg></span>
+                <p>Transferir los resultados analíticos al sistema de salud pública mediante procesos de validación, documentación y colaboración institucional, fortaleciendo la toma de decisiones basada en evidencia.</p>
+              </li>
+              <li class="goal-card">
+                <span class="icon-bubble icon-bubble--violet"><svg aria-hidden="true"><use href="#i-flask"/></svg></span>
+                <p>Consolidar la ciencia abierta y reproducible como estándar de trabajo del Hub, garantizando la transparencia, la trazabilidad y la reutilización de los análisis producidos.</p>
+              </li>
+            </ol>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================================
+         PÁGINA: ÁREAS DE INVESTIGACIÓN
+    ====================================================== -->
+    <section class="page" data-page="areas" data-title="Áreas de investigación" hidden>
+      <div class="hero hero--inner">
+        <div class="container hero__grid">
+          <div class="hero__content">
+            <nav class="breadcrumb" aria-label="Ruta de navegación"><a href="#/inicio">Inicio</a><svg aria-hidden="true"><use href="#i-chevron-right"/></svg><span aria-current="page">Áreas de investigación</span></nav>
+            <h1 class="hero__title hero__title--inner">Áreas de investigación</h1>
+          </div>
+        </div>
+      </div>
+
+      <div class="container page-layout page-layout--single">
+
+        <div class="page-body">
+          <article id="ejes" class="block">
+            <div class="section-head">
+              <h2 class="section-title">Ejes temáticos</h2>
+              <div class="view-switch" role="group" aria-label="Modo de visualización de ejes">
+                <button class="view-switch__btn is-active" data-axes-view="tabs" aria-pressed="true">Por eje</button>
+                <button class="view-switch__btn" data-axes-view="all" aria-pressed="false">Ver todos</button>
+              </div>
+            </div>
+
+            <div class="axes" id="axes" data-view="tabs">
+              <div class="axes__tabs" role="tablist" aria-label="Ejes temáticos">
+                <button class="axes__tab is-active" role="tab" id="tab-eje-1" aria-controls="eje-1" aria-selected="true" data-color="blue">
+                  <span class="axes__num">1</span><span>Análisis de la situación e inteligencia epidemiológica</span>
+                </button>
+                <button class="axes__tab" role="tab" id="tab-eje-2" aria-controls="eje-2" aria-selected="false" tabindex="-1" data-color="amber">
+                  <span class="axes__num">2</span><span>Predicción, alertas tempranas y análisis de escenarios</span>
+                </button>
+                <button class="axes__tab" role="tab" id="tab-eje-3" aria-controls="eje-3" aria-selected="false" tabindex="-1" data-color="teal">
+                  <span class="axes__num">3</span><span>Comprensión de la dinámica y sus determinantes</span>
+                </button>
+                <button class="axes__tab" role="tab" id="tab-eje-4" aria-controls="eje-4" aria-selected="false" tabindex="-1" data-color="violet">
+                  <span class="axes__num">4</span><span>Evaluación e impacto para la toma de decisiones</span>
+                </button>
+              </div>
+
+              <div class="axes__panels">
+                <section class="axis axis--blue is-active" role="tabpanel" id="eje-1" aria-labelledby="tab-eje-1">
+                  <div class="axis__head">
+                    <span class="axis__icon"><svg aria-hidden="true"><use href="#i-bar-chart"/></svg></span>
+                    <div>
+                      <span class="axis__eyebrow">Eje 1</span>
+                      <h3>1. Análisis de la situación e inteligencia epidemiológica</h3>
+                    </div>
+                  </div>
+                  <p class="axis__question">¿Qué está ocurriendo y cómo está cambiando?</p>
+                  <p>Transforma los datos de vigilancia en una comprensión dinámica y territorial de los eventos de salud pública, mediante caracterización epidemiológica, análisis de tendencias y distribución espacial, seguimiento de indicadores clave (incidencia, hospitalizaciones, mortalidad) y evaluación de la oportunidad y completitud del sistema, incluyendo la identificación de posibles subregistros o cambios en los patrones de notificación.</p>
+                  <figure class="img-ph img-ph--soft axis__media"><svg aria-hidden="true"><use href="#i-image"/></svg></figure>
+                </section>
+
+                <section class="axis axis--amber" role="tabpanel" id="eje-2" aria-labelledby="tab-eje-2">
+                  <div class="axis__head">
+                    <span class="axis__icon"><svg aria-hidden="true"><use href="#i-trending-up"/></svg></span>
+                    <div>
+                      <span class="axis__eyebrow">Eje 2</span>
+                      <h3>2. Predicción, alertas tempranas y análisis de escenarios</h3>
+                    </div>
+                  </div>
+                  <p class="axis__question">¿Qué podría ocurrir, qué señales pueden anticiparlo y con qué nivel de incertidumbre?</p>
+                  <p>Anticipa cambios en la dinámica de los eventos y apoya la preparación de la respuesta, mediante nowcasting y forecasting de casos y hospitalizaciones, detección temprana de señales, modelos de riesgo y construcción de escenarios epidemiológicos con integración de variables climáticas y ambientales. La cuantificación y comunicación explícita de la incertidumbre es un componente central de esta línea.</p>
+                  <figure class="img-ph img-ph--soft axis__media"><svg aria-hidden="true"><use href="#i-image"/></svg></figure>
+                </section>
+
+                <section class="axis axis--teal" role="tabpanel" id="eje-3" aria-labelledby="tab-eje-3">
+                  <div class="axis__head">
+                    <span class="axis__icon"><svg aria-hidden="true"><use href="#i-network"/></svg></span>
+                    <div>
+                      <span class="axis__eyebrow">Eje 3</span>
+                      <h3>3. Comprensión de la dinámica y sus determinantes</h3>
+                    </div>
+                  </div>
+                  <p class="axis__question">¿Por qué está ocurriendo y qué factores lo explican?</p>
+                  <p>Identifica los mecanismos y factores que contribuyen a la aparición y evolución de los eventos, integrando variables climáticas, ambientales, territoriales y demográficas; movilidad, inmunidad poblacional, características entomológicas e información de laboratorio; determinantes sociales y factores relacionados con los servicios de salud. Combina modelos mecanísticos, estadísticos y análisis causal para explicar los patrones observados, no sólo describirlos.</p>
+                  <figure class="img-ph img-ph--soft axis__media"><svg aria-hidden="true"><use href="#i-image"/></svg></figure>
+                </section>
+
+                <section class="axis axis--violet" role="tabpanel" id="eje-4" aria-labelledby="tab-eje-4">
+                  <div class="axis__head">
+                    <span class="axis__icon"><svg aria-hidden="true"><use href="#i-clipboard-check"/></svg></span>
+                    <div>
+                      <span class="axis__eyebrow">Eje 4</span>
+                      <h3>4. Evaluación e impacto para la toma de decisiones</h3>
+                    </div>
+                  </div>
+                  <p class="axis__question">¿Cómo usamos los resultados para orientar la toma de decisiones en salud pública?</p>
+                  <p>Transforma los resultados analíticos en evidencia útil para orientar la toma de decisiones en salud pública, mediante la evaluación de intervenciones y la estimación de su impacto, el análisis contrafactual y la evaluación del desempeño de métodos y modelos. Estos resultados se traducen en indicadores y herramientas que apoyan la planificación, la prevención y la respuesta de los equipos de vigilancia y respuesta.</p>
+                  <figure class="img-ph img-ph--soft axis__media"><svg aria-hidden="true"><use href="#i-image"/></svg></figure>
+                </section>
+              </div>
+            </div>
+          </article>
+
+          <article id="temas" class="block">
+            <h2 class="section-title">Temas de interés prioritario</h2>
+            <p class="lead">El Hub abordará los eventos y problemas de salud pública que vigila el INS. Entre sus áreas de interés se incluyen:</p>
+
+            <ul class="topic-grid">
+              <li class="topic-card topic-card--teal"><span class="topic-card__icon"><svg aria-hidden="true"><use href="#i-bug"/></svg></span><svg class="topic-card__mark" aria-hidden="true"><use href="#i-bug"/></svg><h3>Enfermedades transmitidas por vectores y zoonosis.</h3><span class="topic-card__go"><svg aria-hidden="true"><use href="#i-arrow-right"/></svg></span></li>
+              <li class="topic-card topic-card--blue"><span class="topic-card__icon"><svg aria-hidden="true"><use href="#i-wind"/></svg></span><svg class="topic-card__mark" aria-hidden="true"><use href="#i-wind"/></svg><h3>Enfermedades respiratorias e inmunoprevenibles.</h3><span class="topic-card__go"><svg aria-hidden="true"><use href="#i-arrow-right"/></svg></span></li>
+              <li class="topic-card topic-card--red"><span class="topic-card__icon"><svg aria-hidden="true"><use href="#i-alert"/></svg></span><svg class="topic-card__mark" aria-hidden="true"><use href="#i-alert"/></svg><h3>Brotes de curso rápido y emergencias en salud pública.</h3><span class="topic-card__go"><svg aria-hidden="true"><use href="#i-arrow-right"/></svg></span></li>
+              <li class="topic-card topic-card--sky"><span class="topic-card__icon"><svg aria-hidden="true"><use href="#i-cloud-sun"/></svg></span><svg class="topic-card__mark" aria-hidden="true"><use href="#i-cloud-sun"/></svg><h3>Clima, ambiente y salud.</h3><span class="topic-card__go"><svg aria-hidden="true"><use href="#i-arrow-right"/></svg></span></li>
+              <li class="topic-card topic-card--violet"><span class="topic-card__icon"><svg aria-hidden="true"><use href="#i-map-pin"/></svg></span><svg class="topic-card__mark" aria-hidden="true"><use href="#i-map-pin"/></svg><h3>Determinantes sociales y territoriales de la salud.</h3><span class="topic-card__go"><svg aria-hidden="true"><use href="#i-arrow-right"/></svg></span></li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================================
+         PÁGINA: CONVOCATORIA
+    ====================================================== -->
+    <section class="page" data-page="convocatoria" data-title="Convocatoria" hidden>
+      <div class="hero hero--inner">
+        <div class="container hero__grid">
+          <div class="hero__content">
+            <nav class="breadcrumb" aria-label="Ruta de navegación"><a href="#/inicio">Inicio</a><svg aria-hidden="true"><use href="#i-chevron-right"/></svg><span aria-current="page">Convocatoria</span></nav>
+            <h1 class="hero__title hero__title--inner">Convocatoria</h1>
+          </div>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="container">
+          <div class="soon-card">
+            <div class="soon-card__status">
+              <span class="pulse" aria-hidden="true"></span>
+              <span class="badge badge--warn">Próximamente</span>
+            </div>
+            <h2 class="section-title">Próximamente: ¿Cómo participar?</h2>
+            <p class="lead">Los detalles sobre los mecanismos de participación de equipos de investigación, universidades y expertos, en las convocatorias del Hub serán publicados oportunamente en la página del Instituto Nacional de Salud.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="section section--tint">
+        <div class="container">
+          <div class="section-head">
+            <div>
+              <h2 class="section-title">Documentos de la convocatoria</h2>
+            </div>
+          </div>
+          <div class="sp-library" data-library="convocatoria"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================================
+         PÁGINA: NOTICIAS
+    ====================================================== -->
+    <section class="page" data-page="noticias" data-title="Noticias" hidden>
+      <div class="hero hero--inner">
+        <div class="container hero__grid">
+          <div class="hero__content">
+            <nav class="breadcrumb" aria-label="Ruta de navegación"><a href="#/inicio">Inicio</a><svg aria-hidden="true"><use href="#i-chevron-right"/></svg><span aria-current="page">Noticias</span></nav>
+            <h1 class="hero__title hero__title--inner">Noticias</h1>
+          </div>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="container">
+          <div class="news-grid news-grid--page" id="newsList"></div>
+          <p class="empty" id="newsEmpty" hidden>No se encontraron noticias con los filtros seleccionados.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================================
+         PÁGINA: DOCUMENTOS
+    ====================================================== -->
+    <section class="page" data-page="documentos" data-title="Documentos de interés" hidden>
+      <div class="hero hero--inner hero--slim">
+        <div class="container">
+          <nav class="breadcrumb" aria-label="Ruta de navegación"><a href="#/inicio">Inicio</a><svg aria-hidden="true"><use href="#i-chevron-right"/></svg><span aria-current="page">Documentos de interés</span></nav>
+          <h1 class="hero__title hero__title--inner">Documentos de interés</h1>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="container">
+          <div class="sp-library" data-library="repositorio"></div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <button class="to-top" id="toTop" aria-label="Volver arriba" hidden><svg aria-hidden="true"><use href="#i-arrow-up"/></svg></button>
+
+  <!-- Modal genérico -->
+  <div class="modal" id="modal" hidden>
+    <div class="modal__overlay" data-close></div>
+    <div class="modal__card" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <button class="modal__close" data-close aria-label="Cerrar"><svg aria-hidden="true"><use href="#i-x"/></svg></button>
+      <div id="modalBody"></div>
+    </div>
+  </div>
+
+  <div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
+
+  <script src="assets/js/data.js"></script>
+  <script src="assets/js/sharepoint.js"></script>
+  <script src="assets/js/app.js"></script>
+</body>
+</html>

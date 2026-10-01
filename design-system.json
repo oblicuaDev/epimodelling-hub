@@ -1,0 +1,286 @@
+{
+  "project": {
+    "name": "Micro sitio Sarampión",
+    "organization": "Instituto Nacional de Salud (INS)",
+    "description": "mini site dentro del sitio web ins.gov.co que dará la información sobre los casos de sarampion en colombia, con datos actualizados diariamente y visualizaciones interactivas para el público general"
+  },
+
+  "logos": {
+    "description": "Siempre se muestran los dos logos en conjunto, separados por un divisor vertical gris. El logo gov-salud va a la izquierda, el logo INS a la derecha.",
+    "govSalud": {
+      "url": "https://www.ins.gov.co/_catalogs/masterpage/css/images/gov-salud.png",
+      "heightTopbar": "56px",
+      "heightCard": "60px",
+      "alt": "Gov.co – Salud"
+    },
+    "ins": {
+      "url": "https://www.ins.gov.co/Portalweb2025/general-assets/ins-logo.png",
+      "heightTopbar": "48px",
+      "heightCard": "52px",
+      "alt": "Instituto Nacional de Salud"
+    },
+    "divider": {
+      "width": "1px",
+      "heightTopbar": "42px",
+      "heightCard": "48px",
+      "color": "#CBD5E1"
+    },
+    "gap": "0.9rem – 1.1rem entre logos y divisor"
+  },
+
+  "colors": {
+    "primary": "#085add",
+    "primaryDark": "#0644b0",
+    "primaryLight": "#3a7ee8",
+    "primaryAlpha10": "rgba(8, 90, 221, 0.10)",
+    "primaryAlpha12": "rgba(8, 90, 221, 0.12)",
+    "primaryAlpha30": "rgba(8, 90, 221, 0.30)",
+    "primaryAlpha45": "rgba(8, 90, 221, 0.45)",
+
+    "white": "#ffffff",
+    "pageBg": "#F1F5F9",
+    "heroBg": "#EEF4FF",
+
+    "gray50": "#F8FAFC",
+    "gray100": "#F1F5F9",
+    "gray200": "#E2E8F0",
+    "gray300": "#CBD5E1",
+    "gray400": "#94A3B8",
+    "gray500": "#64748B",
+    "gray600": "#475569",
+    "gray700": "#334155",
+    "gray900": "#0F172A",
+
+    "success": "#16a34a",
+    "successBg": "rgba(34, 197, 94, 0.10)",
+    "error": "#dc2626",
+    "errorBg": "rgba(239, 68, 68, 0.10)",
+
+    "colombia": {
+      "description": "Franja bandera Colombia usada como separador decorativo de 4px de alto",
+      "yellow": "#FCD116",
+      "blue": "#003087",
+      "red": "#CE1126",
+      "gradient": "linear-gradient(to right, #FCD116 0% 50%, #003087 50% 75%, #CE1126 75% 100%)"
+    }
+  },
+
+  "typography": {
+    "fontFamily": "'Poppins', sans-serif",
+    "fontSource": "Google Fonts – https://fonts.google.com/specimen/Poppins",
+    "rendering": "-webkit-font-smoothing: antialiased",
+    "scale": {
+      "xs": "0.72rem",
+      "sm": "0.78rem – 0.82rem",
+      "base": "0.875rem – 0.97rem",
+      "md": "1rem",
+      "lg": "1.2rem – 1.25rem",
+      "xl": "clamp(2rem, 4vw, 3rem)"
+    },
+    "weights": {
+      "regular": 400,
+      "semibold": 600,
+      "bold": 700
+    },
+    "lineHeight": {
+      "tight": 1.2,
+      "normal": 1.6,
+      "relaxed": 1.8
+    },
+    "letterSpacing": {
+      "wide": "0.04em",
+      "widest": "0.1em"
+    },
+    "styles": {
+      "heroTitle": "clamp(2rem, 4vw, 3rem) / 700 / #0F172A / line-height 1.2",
+      "heroDescription": "0.97rem / 400 / #64748B / line-height 1.8",
+      "cardTitle": "1.25rem / 700 / #0F172A",
+      "cardSubtitle": "0.85rem / 400 / #64748B",
+      "formLabel": "0.8rem / 600 / #334155",
+      "formInput": "0.875rem / 400 / #0F172A",
+      "navLink": "0.78rem / 600 / #334155 / letter-spacing 0.04em",
+      "badgeUppercase": "0.72rem / 600 / uppercase / letter-spacing 0.1em"
+    }
+  },
+
+  "spacing": {
+    "containerMaxWidth": "1280px",
+    "containerPadding": "0 2rem",
+    "topbarHeight": "96px",
+    "cardPadding": "2.5rem 2rem",
+    "cardMaxWidth": "460px",
+    "cardBorderRadius": "18px",
+    "modalMaxWidth": "400px",
+    "modalBorderRadius": "20px"
+  },
+
+  "borderRadius": {
+    "sm": "6px",
+    "md": "9px",
+    "lg": "14px",
+    "xl": "18px",
+    "xxl": "20px",
+    "full": "9999px"
+  },
+
+  "shadows": {
+    "topbar": "0 4px 24px rgba(8, 90, 221, 0.10), 0 1px 4px rgba(0,0,0,0.06)",
+    "card": "0 8px 40px rgba(8, 90, 221, 0.10), 0 1px 6px rgba(0,0,0,0.06)",
+    "modal": "0 20px 60px rgba(8, 90, 221, 0.15), 0 4px 16px rgba(0,0,0,0.08)",
+    "btnPrimary": "0 4px 18px rgba(8, 90, 221, 0.30)",
+    "btnPrimaryHover": "0 6px 24px rgba(8, 90, 221, 0.45)",
+    "inputFocus": "0 0 0 3px rgba(8, 90, 221, 0.12)"
+  },
+
+  "components": {
+    "button": {
+      "primary": {
+        "background": "#085add",
+        "color": "#ffffff",
+        "border": "1.5px solid #085add",
+        "borderRadius": "9999px",
+        "padding": "0.55rem 1.5rem (topbar) / 0.875rem 2rem (hero CTA) / 0.8rem 1.5rem (submit)",
+        "fontWeight": 600,
+        "shadow": "0 4px 18px rgba(8, 90, 221, 0.30)",
+        "hover": {
+          "background": "#0644b0",
+          "shadow": "0 6px 24px rgba(8, 90, 221, 0.45)",
+          "transform": "translateY(-1px)"
+        },
+        "disabled": "opacity: 0.7; cursor: not-allowed"
+      },
+      "outline": {
+        "background": "transparent",
+        "color": "#334155",
+        "border": "1.5px solid #CBD5E1",
+        "borderRadius": "9999px",
+        "padding": "0.55rem 1.5rem",
+        "fontWeight": 600,
+        "hover": {
+          "borderColor": "#085add",
+          "color": "#085add",
+          "background": "rgba(8, 90, 221, 0.05)",
+          "transform": "translateY(-1px)"
+        }
+      },
+      "backCircle": {
+        "description": "Botón circular de navegación hacia atrás",
+        "size": "36x36px",
+        "borderRadius": "9999px",
+        "border": "1.5px solid #E2E8F0",
+        "color": "#475569",
+        "hover": { "borderColor": "#085add", "color": "#085add" }
+      }
+    },
+
+    "formInput": {
+      "background": "#ffffff",
+      "border": "1.5px solid #E2E8F0",
+      "borderRadius": "9px",
+      "padding": "0.65rem 0.9rem",
+      "fontSize": "0.875rem",
+      "color": "#0F172A",
+      "placeholderColor": "#94A3B8",
+      "focus": {
+        "borderColor": "#085add",
+        "boxShadow": "0 0 0 3px rgba(8, 90, 221, 0.12)"
+      },
+      "error": {
+        "borderColor": "#dc2626",
+        "class": ".form-input--error"
+      }
+    },
+
+    "fieldError": {
+      "fontSize": "0.75rem",
+      "color": "#dc2626",
+      "marginTop": "0.25rem",
+      "class": ".field-error"
+    },
+
+    "modal": {
+      "overlay": {
+        "background": "rgba(15, 23, 42, 0.55)",
+        "backdropFilter": "blur(4px)",
+        "animation": "fadeIn 0.2s ease"
+      },
+      "card": {
+        "background": "#ffffff",
+        "borderRadius": "20px",
+        "padding": "2.5rem 2rem",
+        "maxWidth": "400px",
+        "animation": "slideUp 0.25s ease"
+      },
+      "icon": {
+        "size": "68x68px",
+        "borderRadius": "50%",
+        "success": { "background": "rgba(34,197,94,0.1)", "color": "#16a34a" },
+        "error": { "background": "rgba(239,68,68,0.1)", "color": "#dc2626" }
+      }
+    },
+
+    "badge": {
+      "description": "Etiqueta tipo pill para categorías y estados",
+      "borderRadius": "9999px",
+      "padding": "0.35rem 1rem",
+      "fontSize": "0.72rem",
+      "fontWeight": 600,
+      "textTransform": "uppercase",
+      "letterSpacing": "0.1em",
+      "primary": {
+        "color": "#085add",
+        "background": "rgba(8, 90, 221, 0.08)",
+        "border": "1px solid rgba(8, 90, 221, 0.2)"
+      }
+    },
+
+    "skeleton": {
+      "description": "Placeholder animado mientras cargan datos",
+      "background": "linear-gradient(90deg, #F1F5F9 25%, #E2E8F0 50%, #F1F5F9 75%)",
+      "backgroundSize": "200% 100%",
+      "animation": "shimmer 1.4s ease-in-out infinite",
+      "borderRadius": "8px"
+    },
+
+    "topbar": {
+      "background": "#ffffff",
+      "borderBottom": "1px solid #E2E8F0",
+      "shadow": "0 4px 24px rgba(8, 90, 221, 0.10), 0 1px 4px rgba(0,0,0,0.06)",
+      "position": "sticky top-0",
+      "height": "96px",
+      "maxContentWidth": "1280px"
+    },
+
+    "flagStripe": {
+      "description": "Franja decorativa de 4px con la bandera de Colombia. Se usa como separador entre topbar y contenido principal.",
+      "height": "4px",
+      "gradient": "linear-gradient(to right, #FCD116 0% 50%, #003087 50% 75%, #CE1126 75% 100%)"
+    }
+  },
+
+  "animations": {
+    "fadeIn": "from opacity:0 to opacity:1 — 0.2s ease",
+    "slideUp": "from opacity:0 translateY(24px) to opacity:1 translateY(0) — 0.25s ease",
+    "spin": "rotate 360deg — 0.7s linear infinite (spinner botón cargando)",
+    "shimmer": "backgroundPosition slide — 1.4s ease-in-out infinite (skeleton loader)",
+    "defaultTransition": "all 0.22s ease"
+  },
+
+  "layout": {
+    "maxWidth": "1280px",
+    "heroMinHeight": "calc(100vh - 96px)",
+    "heroBg": "#EEF4FF",
+    "pageBg": "#F1F5F9",
+    "cardGridColumns": "repeat(auto-fill, minmax(280px, 1fr))",
+    "breakpoints": {
+      "mobile": "480px",
+      "tablet": "900px"
+    }
+  },
+
+  "session": {
+    "storageKey": "runins_session",
+    "mechanism": "localStorage",
+    "fields": ["userId", "username", "email", "organization", "phone"]
+  }
+}
