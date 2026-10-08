@@ -64,7 +64,6 @@
     /* ---------- Render ---------- */
     render() {
       this.el.innerHTML = `
-        <div class="sp-cmdbar" data-sp-cmdbar></div>
         <div class="sp-header"><nav class="sp-crumbs" aria-label="Ubicación en la biblioteca" data-sp-crumbs></nav></div>
         
         <div class="sp-body"><div class="sp-main" data-sp-main></div><aside class="sp-details" data-sp-details hidden aria-label="Panel de detalles"></aside></div>
@@ -75,7 +74,6 @@
     renderBody() {
       const sel = this.selectedItems;
       this.el.classList.toggle('has-selection', sel.length > 0);
-      this.renderCmdbar(sel);
       this.renderCrumbs();
       this.renderMain();
       this.renderDetails(sel);
