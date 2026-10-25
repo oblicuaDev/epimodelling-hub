@@ -1,0 +1,107 @@
+/* =========================================================
+   Sentencia T-302 – INS · estilos propios del landing
+   Reutiliza tokens y componentes de styles.css
+   ========================================================= */
+
+.t302-title { max-width: 22ch; }
+.hero--slim .container { padding-top: 3.25rem; padding-bottom: 3.25rem; }
+.section--flush { padding-top: 0; }
+.section:has(+ .section--flush) { padding-bottom: 1.5rem; }
+.section:has(+ .section--flush) { background: #fff; }
+.section--flush { background: #fff; }
+.mainnav__inner { overflow-x: auto; }
+.mainnav__list { flex-wrap: nowrap; }
+.mainnav__link { white-space: nowrap; }
+
+/* ---------- Videos ---------- */
+.video-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 1.5rem; }
+.video-card { background: #fff; border: 1px solid var(--gray-200); border-radius: var(--r-xl); overflow: hidden; box-shadow: var(--sh-card-sm); transition: var(--t); }
+.video-card:hover { box-shadow: var(--sh-card); border-color: var(--primary-a30); }
+.video-card__frame { position: relative; aspect-ratio: 16 / 9; background: var(--navy-deep); }
+.video-card__frame iframe, .video-card__frame video { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+.video-ph {
+  position: absolute; inset: 0; width: 100%; border: 0; cursor: pointer; color: #fff; font-family: inherit;
+  display: flex; flex-direction: column; align-items: center; justify-content: center; gap: .75rem;
+  background:
+    radial-gradient(circle at 80% 15%, rgba(58,126,232,.45), transparent 50%),
+    repeating-linear-gradient(135deg, transparent 0 14px, rgba(255,255,255,.04) 14px 28px),
+    linear-gradient(120deg, var(--navy-deep), var(--navy) 60%, #0a4fc0);
+}
+.video-ph__play { width: 68px; height: 68px; border-radius: 50%; background: #fff; color: var(--primary); display: flex; align-items: center; justify-content: center; box-shadow: 0 8px 28px rgba(0,0,0,.3); transition: var(--t); }
+.video-ph__play svg { width: 1.6rem; height: 1.6rem; margin-left: 3px; }
+.video-ph:hover .video-ph__play { transform: scale(1.08); }
+.video-ph__label { font-size: var(--fs-xs); text-transform: uppercase; letter-spacing: .14em; color: #bcd4ff; font-weight: 600; }
+.video-card__body { padding: 1.25rem 1.5rem 1.5rem; }
+.video-card__body .badge { margin-bottom: .6rem; }
+.video-card__body h4 { font-size: 1.05rem; margin-bottom: .35rem; }
+.video-card__body p { font-size: .85rem; color: var(--gray-500); margin: 0; }
+
+/* ---------- Material pedagógico ---------- */
+.mat-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.25rem; }
+.mat-card { display: flex; flex-direction: column; gap: .5rem; background: #fff; border: 1px solid var(--gray-200); border-radius: var(--r-xl); padding: 1.75rem 1.5rem 1.5rem; box-shadow: var(--sh-card-sm); transition: var(--t); }
+.mat-card:hover { transform: translateY(-3px); box-shadow: var(--sh-card); border-color: var(--primary-a30); }
+.mat-card__num { font-size: var(--fs-xs); font-weight: 600; letter-spacing: .1em; color: var(--gray-400); margin-top: .6rem; }
+.mat-card h4 { font-size: 1.05rem; }
+.mat-card p { font-size: .82rem; color: var(--gray-500); margin: 0 0 .75rem; flex: 1; }
+.mat-card__actions { display: flex; flex-wrap: wrap; gap: .5rem; }
+
+/* ---------- Indicadores ---------- */
+.ind-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 1.25rem; }
+.ind-card { padding: 0; text-align: left; font-family: inherit; cursor: pointer; background: #fff; border: 1px solid var(--gray-200); border-radius: var(--r-xl); overflow: hidden; box-shadow: var(--sh-card-sm); transition: var(--t); color: inherit; }
+.ind-card:hover { transform: translateY(-3px); box-shadow: var(--sh-card); border-color: var(--primary-a30); }
+.ind-card .img-ph, .ind-card img { aspect-ratio: 4 / 3; width: 100%; object-fit: cover; min-height: 0; border-radius: 0; border-width: 0 0 2px; }
+.ind-card__body { padding: .9rem 1.1rem 1.1rem; }
+.ind-card__body h4 { font-size: .95rem; }
+.ind-card__body p { font-size: .78rem; color: var(--gray-500); margin: .2rem 0 0; }
+.lightbox-ph { aspect-ratio: 4 / 3; min-height: 0; margin-bottom: 1rem; }
+.lightbox img { border-radius: var(--r-lg); margin-bottom: 1rem; }
+
+/* ---------- Juego ---------- */
+.game { margin-top: 1.75rem; background: linear-gradient(180deg, var(--hero-bg), #fff); border: 1px solid var(--primary-a12); border-radius: var(--r-xxl); padding: 1.5rem; box-shadow: var(--sh-card); }
+.game__bar { display: flex; flex-wrap: wrap; gap: 1rem; align-items: center; justify-content: space-between; margin-bottom: 1.25rem; }
+.game__stats { display: flex; flex-wrap: wrap; gap: .6rem; }
+.stat { display: inline-flex; align-items: center; gap: .4rem; padding: .4rem .9rem; border-radius: var(--r-full); background: #fff; border: 1px solid var(--gray-200); font-size: .8rem; color: var(--gray-600); }
+.stat b { color: var(--gray-900); font-variant-numeric: tabular-nums; }
+.stat svg { color: var(--primary); }
+.game__ctrl { display: flex; gap: .6rem; align-items: center; }
+.select { font: inherit; font-size: .8rem; font-weight: 600; color: var(--gray-700); border: 1.5px solid var(--gray-300); border-radius: var(--r-full); padding: .5rem 1rem; background: #fff; cursor: pointer; }
+.select:focus { outline: none; border-color: var(--primary); box-shadow: var(--sh-focus); }
+
+.board { display: grid; gap: .85rem; grid-template-columns: repeat(4, 1fr); max-width: 720px; margin: 0 auto; }
+.tile { position: relative; aspect-ratio: 1; perspective: 700px; background: none; border: 0; padding: 0; cursor: pointer; font-family: inherit; }
+.tile__inner { position: absolute; inset: 0; transition: transform .45s ease; transform-style: preserve-3d; }
+.tile.is-flipped .tile__inner, .tile.is-matched .tile__inner { transform: rotateY(180deg); }
+.tile__face { position: absolute; inset: 0; backface-visibility: hidden; -webkit-backface-visibility: hidden; border-radius: var(--r-lg); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: .4rem; box-shadow: var(--sh-card-sm); }
+.tile__face--back {
+  color: #fff;
+  background:
+    radial-gradient(circle at 80% 15%, rgba(58,126,232,.5), transparent 55%),
+    linear-gradient(135deg, var(--navy), var(--primary));
+}
+.tile__face--back svg { width: 38%; height: 38%; opacity: .85; stroke-width: 1.6; }
+.tile__face--front { transform: rotateY(180deg); background: #fff; border: 2px solid var(--primary-a30); color: var(--primary); }
+.tile__face--front svg { width: 40%; height: 40%; stroke-width: 1.7; }
+.tile__face--front span { font-size: .72rem; font-weight: 600; color: var(--gray-700); text-align: center; padding: 0 .3rem; }
+.tile:hover:not(.is-flipped):not(.is-matched) .tile__face--back { filter: brightness(1.12); }
+.tile.is-matched .tile__face--front { border-color: var(--success); background: var(--success-bg); color: var(--success); animation: pop .4s ease; }
+.tile.is-miss .tile__face--front { border-color: var(--error); background: var(--error-bg); color: var(--error); }
+.tile:focus-visible { outline: 2px solid var(--primary); outline-offset: 3px; border-radius: var(--r-lg); }
+@keyframes pop { 50% { transform: rotateY(180deg) scale(1.08); } }
+
+.game__win { display: flex; flex-wrap: wrap; align-items: center; gap: 1rem; justify-content: center; margin-top: 1.5rem; padding: 1.1rem 1.5rem; border-radius: var(--r-xl); background: #fff; border: 1px solid var(--success); animation: slideUp .3s ease; }
+.game__win h3 { font-size: 1.05rem; }
+.game__win p { margin: 0; font-size: .85rem; color: var(--gray-500); }
+
+/* ---------- Pie simple ---------- */
+.footer__simple { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 1rem; padding-top: 1.75rem; padding-bottom: 1.75rem; }
+.footer__note { margin: 0; font-size: .82rem; color: var(--gray-500); }
+
+@media (max-width: 640px) {
+  .board { gap: .55rem; }
+  .game { padding: 1rem; }
+  .video-grid { grid-template-columns: 1fr; }
+  .tile__face--front span { font-size: .62rem; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .tile__inner { transition: none; }
+}
